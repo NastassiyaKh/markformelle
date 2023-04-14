@@ -18,11 +18,11 @@ public class SearchPage extends BasePage {
     private static final String CSS_QUERY_CLASS_FOR_PRODUCTS = ".catalog-item";
 
     public String inputSearchRequest(String request) {
-        Util.waitForElementLocatedBy(driver, SearchPage.LOGO_SEARCH);
+        Util.waitForElementVisLocatedBy(driver, LOGO_SEARCH);
         Actions actions = new Actions(driver);
-        actions.moveToElement(driver.findElement(SearchPage.LOGO_SEARCH)).click().build().perform();
-        driver.findElement(SearchPage.INPUT_SEARCH).sendKeys(request);
-        driver.findElement(SearchPage.INPUT_SEARCH).sendKeys(Keys.ENTER);
+        actions.moveToElement(driver.findElement(LOGO_SEARCH)).click().build().perform();
+        driver.findElement(INPUT_SEARCH).sendKeys(request);
+        driver.findElement(INPUT_SEARCH).sendKeys(Keys.ENTER);
         return driver.getCurrentUrl();
     }
 
