@@ -13,7 +13,7 @@ public class Driver {
     public static WebDriver getDriver() {
         if (driver == null) {
             ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.addArguments("--remote-allow-origins=*");
+            chromeOptions.addArguments("--remote-allow-origins=*", "--disable-cookies");
             driver = new ChromeDriver(chromeOptions);
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();
